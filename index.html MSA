@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Güvenlik İhlali</title>
+  <style>
+    body {
+      background-color: black;
+      color: #00FF00;
+      font-family: monospace;
+      font-size: 16px;
+      padding: 20px;
+      white-space: pre-wrap;
+    }
+    #screen {
+      border: 1px solid #00FF00;
+      padding: 20px;
+      height: 90vh;
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="screen"></div>
+  <audio id="alarm" autoplay>
+    <source src="https://www.soundjay.com/button/beep-07.wav" type="audio/wav">
+  </audio>
+  <script>
+    const text = `
+[⚠] Sistem Güvenliği İhlali Tespit Edildi
+[!] IP Adresi: 192.168.1.33
+[!] Yetkisiz erişim algılandı!
+[!] ROOT erişimi sağlandı...
+[💀] Tüm dosyalar şifreleniyor...
+[✔] Discord token bulundu: YWxhZGRpbjpvcGVuc2VzYW1l
+[✔] Kamera erişimi sağlandı...
+[💣] Sistem %93 oranında ele geçirildi...
+[☠] BIOS sıfırlanıyor...
+
+Artık sistem benim elimde. Şaka yapıyorum 😈 sana UYARI vermiştim beni dinlemedin !!!! 
+
+Sayfayı kapatmak seni kurtarmaz...`;
+
+    let i = 0;
+    const screen = document.getElementById('screen');
+
+    function typeText() {
+      if (i < text.length) {
+        screen.innerText += text.charAt(i);
+        i++;
+        setTimeout(typeText, 30);
+      }
+    }
+
+    window.onload = () => {
+      typeText();
+    };
+  </script>
+</body>
+</html>
